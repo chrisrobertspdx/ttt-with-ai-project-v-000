@@ -28,7 +28,14 @@ class Game
   end
 
   def over?
-    self.board.full? || self.board.won?
+    self.board.full? || self.won?
+  end
+
+  def won?
+    winner = WIN_COMBINATIONS.detect{|combination|
+      if self.board.cells[combination[0]] == self.board.cells[combination[1]] && self.board.cells[combination[1]] == self.board.cells[combination[2]]
+    }
+    !!winner ? winner : false
   end
 
 end
