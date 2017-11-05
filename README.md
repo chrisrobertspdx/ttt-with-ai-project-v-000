@@ -1,4 +1,5 @@
 # Tic-tac-toe with AI
+## Solo developer
 
 ## Objectives
 1. Build a command-line interface (CLI).
