@@ -1,7 +1,10 @@
 # Tic-tac-toe with AI
 <<<<<<< HEAD
+<<<<<<< HEAD
 gi
 =======
+=======
+>>>>>>> 12d24377045356522ec27200a93bbc7cf7bd0fcd
 ## Solo developer
 
 >>>>>>> ba25ce88b452b804c06e0ab564e5d536796bdc84
