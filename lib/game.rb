@@ -33,9 +33,18 @@ class Game
 
   def won?
     winner = WIN_COMBINATIONS.detect{|combination|
-      if self.board.cells[combination[0]] == self.board.cells[combination[1]] && self.board.cells[combination[1]] == self.board.cells[combination[2]]
+      self.board.cells[combination[0]] == self.board.cells[combination[1]] && self.board.cells[combination[1]] == self.board.cells[combination[2]] && self.board.cells[combination[0]] != " "
     }
     !!winner ? winner : false
+  end
+
+  def draw?
+    self.board.full? && !self.won?
+  end
+
+  def winner
+    w = won?
+    w ? self.board.cells[w[0]] : nil
   end
 
 end

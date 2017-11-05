@@ -22,7 +22,7 @@ class Board
     self.cells[input_to_index(square)]
   end
   def full?
-    self.cells.all?{|c| (c == "X" || c == "Y")}
+    self.cells.all?{|c| (c == "X" || c == "O")}
   end
   def turn_count
     #turns completed
