@@ -1,5 +1,10 @@
 # Tic-tac-toe with AI
+<<<<<<< HEAD
 gi
+=======
+## Solo developer
+
+>>>>>>> ba25ce88b452b804c06e0ab564e5d536796bdc84
 ## Objectives
 1. Build a command-line interface (CLI).
 2. Create a domain model with multiple relating and collaborating objects.
