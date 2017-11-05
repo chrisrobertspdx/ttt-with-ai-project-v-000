@@ -1,15 +1,8 @@
 class Board
   attr_accessor :cells
-<<<<<<< HEAD
-
-
-#use detect method for won. no need to check x and y
-
-
-=======
->>>>>>> 12d24377045356522ec27200a93bbc7cf7bd0fcd
   def initialize
-    @cells = Array.new(9," ")
+    #@cells = Array.new(9," ")
+    self.reset!
   end
   def reset!
     #self.cells.fill(" ")
