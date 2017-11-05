@@ -35,7 +35,8 @@ class Board
     index = input_to_index(c)
     index.between?(0,8) && !taken?(c)
   end
-  def update
-
+  def update(c,player)
+    index = input_to_index(c)
+    self.cells[index] = player.token
   end
 end
