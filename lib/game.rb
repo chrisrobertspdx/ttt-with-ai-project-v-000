@@ -23,4 +23,12 @@ class Game
 
   end
 
+  def current_player
+    self.board.turn_count % 2 == 0 ? player_1 : player_2
+  end
+
+  def over?
+    self.board.full? || self.board.won?
+  end
+
 end
