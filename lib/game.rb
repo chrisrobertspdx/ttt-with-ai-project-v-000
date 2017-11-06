@@ -46,5 +46,14 @@ class Game
     w = won?
     w ? self.board.cells[w[0]] : nil
   end
+  
+  def turn 
+    m = current_player.move(self.board)
+    until valid_move?(m) {
+      puts "Invalid board selection."
+      m = current_player.move(self.board)
+    }
+    self.board.update(m,current_player)
+  end
 
 end
