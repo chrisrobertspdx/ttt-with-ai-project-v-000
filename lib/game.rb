@@ -20,15 +20,21 @@ class Game
   end
 
   def start
-
+    @welc
   end
 
   def current_player
-    self.board.turn_count % 2 == 0 ? player_1 : player_2
+    self.board.turn_count % 2 == 0 ? self.player_1 : self.player_2
   end
 
   def over?
-    self.board.full? || self.won?
+    if self.board.full? == true || self.won? == true
+      response = true
+    else
+      response = false
+    end
+    #binding.pry
+    return response
   end
 
   def won?
@@ -48,12 +54,28 @@ class Game
   end
   
   def turn 
-    m = current_player.move(self.board)
-    until valid_move?(m) {
+    self.board.display
+    #binding.pry
+    m = self.current_player.move(self.board)
+    m = m.to_i
+    until self.board.valid_move?(m) do
+      binding.pry
       puts "Invalid board selection."
-      m = current_player.move(self.board)
-    }
-    self.board.update(m,current_player)
+      m = self.current_player.move(self.board)
+    end
+    self.board.update(m,self.current_player)
+  end
+
+  def play
+    #binding.pry
+    self.board.display
+    self.turn
+    if self.over?
+      puts "over"
+    else
+      self.turn
+    end
+
   end
 
 end
