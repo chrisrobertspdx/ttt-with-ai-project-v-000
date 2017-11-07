@@ -14,7 +14,12 @@ module Players
       s = open_cells.sample.to_s
       puts "#{self.token} picks square #{s}."
       s
+      # intermediate level
+      win_combos = Game.WIN_COMBINATIONS
+      theoretical_board = Board.new
+
     end
+    def 
   end
 end
 
