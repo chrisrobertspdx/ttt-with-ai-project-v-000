@@ -4,6 +4,11 @@ module Players
   class Computer < Player
     attr_reader :board
     def move(board)
+      #auto move - center 
+      if board.turn_count == 0
+        return 5
+      end
+
       #random level
       open_cells = []
         board.cells.each_with_index{|e,i|
@@ -30,6 +35,10 @@ module Players
           end
         }
 
+      #take middle if available
+      if !board.taken?(5)
+        return 5
+      end
 
       s = open_cells.sample.to_s
       puts "#{self.token} picks square #{s}."
