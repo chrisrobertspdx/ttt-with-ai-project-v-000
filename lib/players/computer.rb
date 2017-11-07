@@ -1,4 +1,9 @@
 #require_relative '../player.rb'
+#take center if avail and 1st move
+#try to win
+#try to block
+#take center if available
+#random
 
 module Players
   class Computer < Player
