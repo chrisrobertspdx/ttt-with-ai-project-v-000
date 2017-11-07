@@ -20,7 +20,6 @@ module Players
       puts "#{self.token} picks square #{s}."
       s
     end
-    def
   end
 end
 
