@@ -56,7 +56,7 @@ module Players
             c.collect{|a| theoretical_board.cells[a]}.count(opp_token) == 3
           }
 
-          puts theblock.inspect
+          #puts theblock.inspect
           if !!theblock
             puts "found block"
             return theblock.detect{|e|
