@@ -23,7 +23,7 @@ module Players
             c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 2 &&
             c.collect{|a| theoretical_board.cells[a]}.count(" ") == 1
           }
-          puts thewinner
+          puts thewinner.inspect
         }
 
 
