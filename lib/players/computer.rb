@@ -14,10 +14,19 @@ module Players
 
       # intermediate level
       win_combos = Game.win_combos
-      theoretical_board = Board.new
-      theoretical_board.cells = board.cells.clone
-      theoretical_board.update(open_cells.sample.to_s,self)
-      puts theoretical_board.cells.inspect
+        #can we make a win combo?
+        open_cells.each{|e|
+          theoretical_board = Board.new
+          theoretical_board.cells = board.cells.clone
+          theoretical_board.update(e,self)
+          winner = WIN_COMBINATIONS.detect{|combination|
+            theoretical_board.cells[combination[0]] == theoretical_board.cells[combination[1]] && 
+            theoretical_board.cells[combination[1]] == theoretical_board.cells[combination[2]] && 
+            theoretical_board.cells[combination[0]] != " "
+          }
+          puts winner.inspect
+        }
+
 
       s = open_cells.sample.to_s
       puts "#{self.token} picks square #{s}."
