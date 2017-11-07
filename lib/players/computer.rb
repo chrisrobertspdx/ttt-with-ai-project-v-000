@@ -22,7 +22,11 @@ module Players
           thewinner = win_combos.detect{|c|
             c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 3
           }
-          puts thewinner.inspect
+          if !winner
+            return thewinner.detect{|e|
+              board.cells[e] == " "
+            }
+          end
         }
 
 
