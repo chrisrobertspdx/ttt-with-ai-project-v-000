@@ -15,7 +15,7 @@ module Players
       # intermediate level
       win_combos = Game.win_combos
       theoretical_board = Board.new
-      theoretical_board = board.cells.clone
+      theoretical_board.cells = board.cells.clone
       theoretical_board.update(open_cells.sample.to_s,self)
       puts theoretical_board.cells.inspect
 
