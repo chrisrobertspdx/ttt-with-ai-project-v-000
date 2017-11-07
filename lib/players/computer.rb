@@ -3,6 +3,7 @@
 #try to win
 #try to block
 #take center if available
+#take corner if available
 #random
 
 module Players
@@ -79,12 +80,22 @@ module Players
         puts "Corner: #{avail_corner}"
         return avail_corner
       end
-      
+
 
       s = open_cells.sample.to_s
       puts "#{self.token} picks square #{s}."
       s
     end
+  end
+  class Computer2 < Player
+    attr_reader :board
+    def get_available_moves(board)
+      board.cells.each_index.collect{|i| 
+        if board[i] != "X" && aboard[i] != "O"
+          i
+        end
+      }
+   end
   end
 end
 
