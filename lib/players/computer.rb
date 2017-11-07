@@ -39,18 +39,18 @@ module Players
           opp_token = "O"
         else
           opp_token = "X"
-        end 
-        
+        end
+
         open_cells.each{|e|
           theoretical_board = Board.new
           theoretical_board.cells = board.cells.clone
-          theoretical_board.update(e,self)
-          thewinner = win_combos.detect{|c|
-            c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 3
+          theoretical_board.cells[e] = opp_token
+          theblock = win_combos.detect{|c|
+            c.collect{|a| theoretical_board.cells[a]}.count(opp_token) == 3
           }
-          if !!thewinner
-            puts "found winner"
-            return thewinner.detect{|e|
+          if !!theblock
+            puts "found block"
+            return theblock.detect{|e|
               board.cells[e] == " "
             } + 1
           end
