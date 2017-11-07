@@ -20,8 +20,7 @@ module Players
           theoretical_board.cells = board.cells.clone
           theoretical_board.update(e,self)
           thewinner = win_combos.detect{|c|
-            c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 2 &&
-            c.collect{|a| theoretical_board.cells[a]}.count(" ") == 1
+            c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 3
           }
           puts thewinner.inspect
         }
