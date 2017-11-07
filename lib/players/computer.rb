@@ -4,7 +4,7 @@ module Players
   class Computer < Player
     attr_reader :board
     def move(board)
-      #auto move - center 
+      #auto move - center
       if board.turn_count == 0
         return 5
       end
@@ -20,6 +20,27 @@ module Players
       # intermediate level
       win_combos = Game.win_combos
         #can we make a win combo?
+        open_cells.each{|e|
+          theoretical_board = Board.new
+          theoretical_board.cells = board.cells.clone
+          theoretical_board.update(e,self)
+          thewinner = win_combos.detect{|c|
+            c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 3
+          }
+          if !!thewinner
+            puts "found winner"
+            return thewinner.detect{|e|
+              board.cells[e] == " "
+            } + 1
+          end
+        }
+        #can we block
+        if self.token == "X"
+          opp_token = "O"
+        else
+          opp_token = "X"
+        end 
+        
         open_cells.each{|e|
           theoretical_board = Board.new
           theoretical_board.cells = board.cells.clone
