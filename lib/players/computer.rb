@@ -87,16 +87,7 @@ module Players
       s
     end
   end
-  class Computer2 < Player
-    attr_reader :board
-    def get_available_moves(board)
-      board.cells.each_index.collect{|i| 
-        if board[i] != "X" && aboard[i] != "O"
-          i
-        end
-      }
-   end
-  end
+
 end
 
 #hal = Players::Computer.new("O")
