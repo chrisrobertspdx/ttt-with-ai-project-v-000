@@ -23,6 +23,7 @@ module Players
             c.collect{|a| theoretical_board.cells[a]}.count(self.token) == 3
           }
           if !!thewinner
+            puts "found winner"
             return thewinner.detect{|e|
               board.cells[e] == " "
             } + 1
