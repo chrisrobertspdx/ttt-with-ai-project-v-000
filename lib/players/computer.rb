@@ -75,7 +75,11 @@ module Players
       avail_corner = [1,3,7,9].detect{|e|
         !board.taken?(e)
       }
-      puts "Corner: #{avail_corner}"
+      if !!avail_corner
+        puts "Corner: #{avail_corner}"
+        return avail_corner
+      end
+      
 
       s = open_cells.sample.to_s
       puts "#{self.token} picks square #{s}."
