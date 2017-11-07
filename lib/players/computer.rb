@@ -54,6 +54,7 @@ module Players
           theblock = win_combos.detect{|c|
             c.collect{|a| theoretical_board.cells[a]}.count(opp_token) == 3
           }
+          puts theblock.inspect
           if !!theblock
             puts "found block"
             return theblock.detect{|e|
