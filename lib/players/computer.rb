@@ -13,7 +13,7 @@ module Players
       }
 
       # intermediate level
-      win_combos = Game.WIN_COMBINATIONS
+      # win_combos = Game.WIN_COMBINATIONS
       theoretical_board = Board.new
 
       s = open_cells.sample.to_s
