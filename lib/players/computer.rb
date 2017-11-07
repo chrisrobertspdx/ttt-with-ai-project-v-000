@@ -11,6 +11,7 @@ module Players
     def move(board)
       #auto move - center
       if board.turn_count == 0
+        puts "#{self.token} picks square 5."
         return 5
       end
 
@@ -63,6 +64,7 @@ module Players
 
       #take middle if available
       if !board.taken?(5)
+        puts "#{self.token} picks square 5."
         return 5
       end
 
